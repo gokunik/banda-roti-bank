@@ -1,15 +1,10 @@
 {
-    "version":  2,
+    "version": 2,
+    "name": "banda-roti-bank",
     "builds": [
-        {
-            "src":"server/index.js",
-            "use":"@vercel/node"
-        }
+       { "src": "./server/index.js", "use": "@vercel/node" }
     ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/"
-        }
+    "routes": [
+       { "src": "/(.*)", "dest": "/server/index.js" }
     ]
-}
+ }
