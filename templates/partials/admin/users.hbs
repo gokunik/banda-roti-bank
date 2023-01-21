@@ -1,0 +1,84 @@
+<section class="container py-5">
+    <h5 class="text-center text-white">
+        Welcome to the <span class="text-warning">Users Dashboard</span>
+    </h5>
+</section>
+
+<section class=" mb-5">
+    <div class="card border-0">
+        <div class="card-header bg-info d-flex justify-content-between align-items-center">
+            <h5 class="text-white">
+                Manage Users
+            </h5>
+            <div class="form-group mb-0 pb-0">
+                <form id="form1" method="POST" action="/values">
+                <select class="form-control form-control-sm" name="opt" id="opt">
+                    <option value="">Filter</option>
+                    <option value="Users">Users</option>
+                    <option value="Volunteers">Volunteers</option>
+                </select>
+                <button style="background:rgba(224, 26, 26, 0.829);color:white;">Show</button>
+                </form>
+            </div>
+        </div>
+        {{#each us1}}
+        <div class="card-body p-0">
+
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between" data-toggle="collapse"
+                    data-target="#a{{@index}}">
+                    <h6 class="text-dark">
+                        User : {{name}}
+                    </h6>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </li>
+                <div id="a{{@index}}" class="collapse">
+                    <ul class="list-group text-dark list-group-horizontal flex-wrap justify-content-between p-2">
+                        <li class="list-group-item p-0">
+                            <div class="input-group ">
+                                <div class="input-group-prepend border-0">
+                                    <span class="input-group-text bg-white ">
+                                        <h5><span class="badge badge-info">Name</span></h5>
+                                    </span>
+                                </div>
+                                <p class="form-control">{{name}}</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-0">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white ">
+                                        <h5><span class="badge badge-info">Mobile</span></h5>
+                                    </span>
+                                </div>
+                                <p class="form-control">{{phone}}</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-0">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white ">
+                                        <h5><span class="badge badge-info">Email</span></h5>
+                                    </span>
+                                </div>
+                                <p class="form-control">{{email}}</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-0">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white ">
+                                        <h5><span class="badge badge-info">Type</span></h5>
+                                    </span>
+                                </div>
+                                <p class="form-control">{{password}}</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+        </div>
+        {{/each}}
+</section>
+
+{{!-- modal for user details view --}}

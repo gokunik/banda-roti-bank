@@ -1,0 +1,163 @@
+{{!-- Head navigation. --}}
+{{!-- divided into to menu's secondary and main menu --}}
+
+<header id="mainHeader">
+    <!-- Secondary header - it include phone and email, option for login and register and option for donation -->
+    <div id="infoHeader" class="d-flex flex-wrap justify-content-center p-3 align-items-center bg-dark">
+        <!-- section 1 of the secondary header -->
+        <div class="infoSec1 px-1 d-flex flex-wrap">
+            <div>
+                <i class="fa fa-phone flex-fill"></i>
+                <a class="text-white" href="tel:9451988451"> +91 9451988451</a>
+            </div>
+            <div>
+                <i class="fa fa-envelope flex-fill"></i>
+                <a class="text-white" href="mailto:bandarotibank@gmail.com"> bandarotibank@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- section 2 of secondary header -->
+        <div class="infoSec2 px-2 flex-fill d-flex flex-wrap">
+            <button type="button" id="donateBtn" class="btn btn-warning" data-toggle="modal" data-target="#donateModal">
+                Donate
+            </button>
+
+
+            {{!-- For future use of login and register functionality --}}
+            {{!-- {{#if loggedIn}}
+            <div class="btn-group d-flex">
+                <button type="button" id="profileBtn" class="btn btn-info" data-toggle="modal" data-target="#profile">
+                    {{userDetails.name}}
+                </button>
+
+                <form action="userLogout" method="POST">
+                    <button type="submit" id="userLogout" class="btn btn-info">
+                        logout
+                    </button>
+
+                </form>
+            </div>
+            {{else}}
+            <div class="btn-group d-flex">
+                <button type="button" id="loginBtn" class="btn btn-info" data-toggle="modal" data-target="#Modal"
+                    onclick="login()">
+                    Login
+                </button>
+
+                <button type="button" id="registerBtn" class="btn btn-info" data-toggle="modal" data-target="#Modal"
+                    onclick="register()">
+                    Register
+                </button>
+            </div>
+            {{/if}} --}}
+
+        </div>
+    </div>
+
+    <!-- Primary header -->
+    <div class="navigation-wrap bg-light start-header" id="header">
+        <div class="px-5">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <!-- logo -->
+                <div class="navbar-brand"><a href="/" class="text-dark">Banda Roti Bank</a></div>
+
+                <!-- Menu toggle button for mobile devices -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto py-4 py-md-0">
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                            <a class="nav-link" href="/newsfeed">NewsFeed</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                            <a class="nav-link" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                        <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Know more <i
+                                    class="fa fa-caret-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="mission">Our Mission</a>
+                                <a class="dropdown-item" href="gallery">Gallery</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- End of the primary menu -->
+
+    {{!-- *************************************************************************************** --}}
+
+    <!-- Login and Register -->
+    <template>
+        {{>login}}
+    </template>
+
+    <template>
+        {{>register}}
+    </template>
+
+    {{!-- Modal to show login and register partial --}}
+    <div class="modal fade" id="Modal">
+        <div class="modal-dialog  modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="fa fa-times-circle"></i>
+                </button>
+                <!-- Modal body -->
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Modal for donate --}}
+    <div class="modal fade" id="donateModal">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="fa fa-times-circle"></i>
+                </button>
+                <!-- Modal body -->
+                <div class="modal-body" id="modalBody">
+                    {{>donate}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="profile">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="fa fa-times-circle"></i>
+                </button>
+                <!-- Modal body -->
+                <div class="modal-body" id="modalBody">
+                    {{>profile}}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{{!-- whatsapp fixed button --}}
+<section class="whatsapp-wrapper">
+    <div class="whatsapp-container">
+        <a href="https://api.whatsapp.com/send?phone=919451988451" data-toggle="tooltip" data-placement="auto"
+            title="Get a quick reply!" target="_blank">
+            <i class="fa fa-whatsapp fa-2x text-white" aria-hidden="true"></i></a>
+    </div>
+</section>

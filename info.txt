@@ -1,0 +1,10 @@
+command to run nodemon - nodemon ./server/index.js
+command to start the project - npm start
+
+
+
+
+
+
+
+
